@@ -1,4 +1,4 @@
-const zucchine = [
+let zucchine = [
   { type: 'Napoletana', weight: 10, length: 4 },
   { type: 'Trombetta', weight: 13, length: 16 },
   { type: 'Napoletana', weight: 4, length: 23 },
@@ -12,12 +12,12 @@ const zucchine = [
 ];
 
 // A partire dall'array fornito, crea due array. Uno con le zucchine più lunghe di almeno 15cm. L'altro con le restanti.
-const zucchineCorte = []
-const zucchineLunghe = []
-zucchine.filter((element)=>{
-  if (element.length < 15)
-    zucchineCorte.push(element)
-    else {zucchineLunghe.push(element)}
+
+const zucchineLunghe = zucchine.filter((element)=>{
+  return element.length>14
+})
+const zucchineCorte = zucchine.filter((element)=>{
+  return element.length<15
 })
 console.log(zucchineCorte)
 console.log(zucchineLunghe)
